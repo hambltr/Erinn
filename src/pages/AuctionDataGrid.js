@@ -3,6 +3,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./AuctionDataGrid.css";
 import Loading from "../Loading";
+import Logo from "./Logo"
 
 // ~억, ~만 단위로 숫자를 포맷팅해줌
 const formatPrice = (price) => {
@@ -184,6 +185,7 @@ function AuctionDataGrid() {
           </React.Fragment>
         ))}
       </div>
+      <Logo/>
     </div>
   );
 }

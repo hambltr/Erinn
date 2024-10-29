@@ -7,10 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
-  // 다크모드 상태를 localStorage에서 가져옴, 기본값은 false
+  // 다크모드 상태를 localStorage에서 가져옴, 기본값은 true
   const [darkMode, setDarkMode] = useState(() => {
     const savedDarkMode = localStorage.getItem('darkMode');
-    return savedDarkMode ? JSON.parse(savedDarkMode) : false;
+    return savedDarkMode ? JSON.parse(savedDarkMode) : true;
   });
 
   // 선택된 탭 상태를 localStorage에서 가져옴, 기본값은 'auction'
