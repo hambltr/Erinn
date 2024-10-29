@@ -1,0 +1,153 @@
+
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /*padding: 50px 1rem 0px;*/
+    max-width: 1200px;
+    margin: auto;
+    min-width: 880px;
+}
+
+.section {
+    display: grid;
+    gap: 0.3rem;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section_1  {
+    grid-template-columns: 0.3fr 1.5fr  0.5fr 0.7fr 0.7fr 0.7fr;
+}
+
+.section_2 {
+    grid-template-columns: 0.3fr 2fr 0.7fr 0.7fr 0.7fr;
+}
+
+.header {
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #e8e8e8;
+    border-bottom: 2px solid #ccc;
+}
+
+.data {
+    text-align: center;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.item_image {
+    position: relative;
+    min-width: 50px;
+    z-index: 99;
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: center;
+}
+
+.item_ranking {
+    position: relative;
+}
+
+.loading {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 99vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.loading p {
+    margin: 15px auto;
+}
+
+/* 기본 라이트 모드 색상 설정 */
+:root {
+    --bg-color: #ffffff;
+    --section-bg-color: #f8f8f8;
+    --section-border-color: #ddd;
+    --header-bg-color: #e8e8e8;
+    --data-bg-color: #ffffff;
+    --data-border-color: #e0e0e0;
+    --text-color: #000000;
+}
+
+/* 다크 모드 색상 설정 */
+.dark-mode {
+    --bg-color: #333333;
+    --section-bg-color: #444444;
+    --section-border-color: #555555;
+    --header-bg-color: #555555;
+    --data-bg-color: #555555;
+    --data-border-color: #666666;
+    --text-color: #f0f0f0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.grid-container {
+    background-color: var(--bg-color);
+}
+
+.section {
+    background-color: var(--section-bg-color);
+    border: 1px solid var(--section-border-color);
+    position: relative;
+}
+
+.header {
+    background-color: var(--header-bg-color);
+}
+
+.data {
+    background-color: var(--data-bg-color);
+    border: 1px solid var(--data-border-color);
+}
+
+.nav {
+    min-width: 420px;
+
+}
+
+.nav-link.active {
+    font-weight: bolder;
+    border-bottom: 3px solid #CE9D17;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.main_title {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+}
+
+.time_info {
+    position: absolute;
+    right: 0;
+    top: -30px;
+}
+
+.api_info {
+    position: absolute;
+    padding: 0 5px;
+    bottom: -23px;
+    right: 0;
+}
