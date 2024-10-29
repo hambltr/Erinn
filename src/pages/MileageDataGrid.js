@@ -16,14 +16,14 @@ const formatPrice = (price) => {
   if (numericPrice >= 100000000) {
     const billionPart = Math.floor(numericPrice / 100000000);
     const restPart = Math.floor((numericPrice % 100000000) / 10000);
-    return `${billionPart}억${restPart > 0 ? restPart + '만' : ''}Gold`;
+    return `${billionPart}억${restPart > 0 ? restPart + '만' : ''} Gold`;
   }
 
   if (numericPrice >= 10000) {
-    return `${Math.floor(numericPrice / 10000)}만Gold`;
+    return `${Math.floor(numericPrice / 10000)}만 Gold`;
   }
 
-  return `${numericPrice}Gold`;
+  return `${numericPrice} Gold`;
 };
 
 // 금액에 따라 색상을 반환하는 함수
