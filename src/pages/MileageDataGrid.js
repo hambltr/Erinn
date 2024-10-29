@@ -55,9 +55,10 @@ function MileageDataGrid() {
     const savedData = localStorage.getItem('mileageAuctionData');
     const savedTimestamp = localStorage.getItem('mileageAuctionDataTimestamp');
     const currentTime = new Date().getTime();
-    const THIRTY_MINUTES = 30 * 60 * 1000; // 30분을 밀리초로 변환
+    const TEN_MINUTES = 10 * 60 * 1000; // 10분을 밀리초로 변환 (데이터 유효성 검사)
 
-    if (savedData && savedTimestamp && currentTime - savedTimestamp < THIRTY_MINUTES) {
+
+    if (savedData && savedTimestamp && currentTime - savedTimestamp < TEN_MINUTES) {
       setAuctionData(JSON.parse(savedData));
       setLoading(false);
       return;

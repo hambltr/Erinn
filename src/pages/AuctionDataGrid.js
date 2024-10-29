@@ -52,12 +52,19 @@ function AuctionDataGrid() {
   const [loading, setLoading] = useState(auctionData.length === 0);
 
   useEffect(() => {
-    if (auctionData.length > 0) {
+    const savedData = localStorage.getItem('auctionData');
+    const savedTimestamp = localStorage.getItem('auctionDataTimestamp');
+    const currentTime = new Date().getTime();
+    const TEN_MINUTES = 10 * 60 * 1000; // 10분을 밀리초로 변환 (데이터 유효성 검사)
+
+
+    if (savedData && savedTimestamp && currentTime - savedTimestamp < TEN_MINUTES) {
+      setAuctionData(JSON.parse(savedData));
       setLoading(false);
       return;
     }
 
-    let isMounted = true; // 컴포넌트가 언마운트된 이후로 데이터를 설정하지 않도록 방지
+    let isMounted = true;
 
     // Google Apps Script에서 데이터를 가져오는 API 호출
     axios
