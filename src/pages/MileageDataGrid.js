@@ -123,7 +123,7 @@ function MileageDataGrid() {
   };
 
   return (
-    <div className="grid-container">
+    <div className="grid_container">
       {/* Section 2: 마일리지 정보 출력 */}
       <div className="section section_2">
         <div className="time_info">
@@ -131,6 +131,7 @@ function MileageDataGrid() {
         </div>
         <div className="header"></div>
         <div className="header">아이템 이름</div>
+        <div className="header">전날 대비</div>
         <div className="header" style={{color: getPriceColor}}>최근 경매가</div>
         <div className="header">현재 판매가</div>
         <div className="header">어디에서 살까?</div>
@@ -155,6 +156,20 @@ function MileageDataGrid() {
                   #{index + 1}위
                 </span>
               )}
+            </div>
+            <div
+              className="data"
+              style={{
+                color:
+                  item["등락률"] > 0
+                    ? "#C75060"
+                    : item["등락률"] < 0
+                      ? "#43abcb"
+                      : "rgb(204, 204, 204)",
+              }}
+            >
+              {item["등락률"] > 0 ? "▲" : item["등락률"] < 0 ? "▼" : ""} {" "}
+              {Math.abs(item["등락률"] * 100).toFixed(2)}%
             </div>
             <div className="data" style={{color: getPriceColor(item["최근 경매가"])}}>
               {formatPrice(item["최근 경매가"])}

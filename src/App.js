@@ -36,7 +36,8 @@ function App() {
 
   return (
     <div>
-      <Navbar className="nav" bg={darkMode ? "dark" : "light"} variant={darkMode ? "dark" : "light"}>
+      <Navbar className="nav" variant={darkMode ? "dark" : "light"}>
+        {/*bg={darkMode ? "dark" : "light"}*/}
         <Container>
           {/*<Navbar.Brand href="/">마비노기 방울토마토</Navbar.Brand>*/}
           <div>

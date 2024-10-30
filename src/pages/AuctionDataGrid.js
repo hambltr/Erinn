@@ -121,7 +121,7 @@ function AuctionDataGrid() {
   }
 
   return (
-    <div className="grid-container">
+    <div className="grid_container">
       <div className="section section_1">
         <div className="time_info">
           {auctionData.length > 0 ? `Updated at ${(auctionData[1]["업데이트 시간"])}` : "업데이트 시간 정보 없음"}
@@ -186,7 +186,7 @@ function AuctionDataGrid() {
               {item["경매장/캐시샵 구매 추천"] === "GOLD"
                 ? "경매장"
                 : item["경매장/캐시샵 구매 추천"] === "CASH"
-                  ? "캐시샵"
+                  ? "아이템샵"
                   : ""}
             </div>
           </React.Fragment>
